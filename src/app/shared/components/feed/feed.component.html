@@ -1,0 +1,33 @@
+<div class="feed">
+  <div class="feed__header">
+    <span class="feed__profile">
+      <span class="feed__avatar" [title]="feed.owner.firstName + ' ' + feed.owner.lastName">
+        <img class="feed__img" [src]="feed.owner.avatar" [alt]="feed.owner.firstName + ' ' + feed.owner.lastName + ' avatar'">
+      </span>
+      <h3 class="feed__fullname">
+        <div>{{ feed.owner.firstName }}</div>
+        <div>{{ feed.owner.lastName }}</div>
+      </h3>
+    </span>
+  </div>
+
+  <div class="feed__content">{{ feed.content }}</div>
+
+  <div class="feed__actions">
+    <small class="feed__created" [title]="feed.createdAt | date: 'full'">
+      {{ feed.createdAt | date: 'short' }}
+    </small>
+    
+    <button
+      class="feed__favorite"
+      type="button"
+      title="add to your favorites"
+      (click)="onToggleFavorite.emit(feed)"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <defs/>
+        <path fill="none" stroke="#373737" [class.favorite]="isFavorite" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M16 4l3 9h9l-7 6 3 9-8-6-8 6 3-9-7-6h9z"/>
+      </svg>
+    </button>
+  </div>
+</div>

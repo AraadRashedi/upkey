@@ -1,1 +1,54 @@
+@import "./app/shared/scss/respond.scss";
+
 /* You can add global styles to this file, and also import other style files */
+*
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include respond(large-desktop) { font-size: 75%; }
+  @include respond(landscape-tablet) { font-size: 56.25%; }
+  @include respond(tablet) { font-size: 50%; }
+  @include respond(phablet) { font-size: 48%; }
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.6rem;
+  background-color: #f8f8f8;
+  color: #373737;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.u-center {
+  display: flex;
+  place-content: center;
+  place-items: center;
+}

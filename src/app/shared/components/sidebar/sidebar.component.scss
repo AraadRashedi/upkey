@@ -1,0 +1,63 @@
+@import "../../scss/respond.scss";
+
+.sidebar {
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+
+  &__brand {
+    padding: 2rem;
+    margin: 0;
+
+    @include respond(phablet) {
+      display: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+
+    @include respond(tablet) {
+      padding-top: 2rem;
+    }
+  }
+
+  &__title {
+    padding: 2rem;
+    margin: 0;
+  }
+
+  &__all {
+    padding: 2rem;
+    color: #5E6BF6;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all .5s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__users {
+    flex: 1;
+    padding: 2rem;
+    padding-top: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__user {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .5s;
+  box-shadow: 0 0 1px rgba(0,0,0,0.05), 
+              0 0 2px rgba(0,0,0,0.05), 
+              0 0 4px rgba(0,0,0,0.05), 
+              0 0 8px rgba(0,0,0,0.05);
+
+  &:hover {
+    opacity: .8;
+  }
+  &:active {
+    opacity: .5;
+  }
+
+  &__avatar {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__info {}
+
+  &__name {
+    margin-left: 2rem;
+  }
+}

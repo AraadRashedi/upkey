@@ -1,0 +1,88 @@
+.feed {
+  padding: 3rem;
+  height: calc(100% - 2 * 3rem);
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #5E6BF6;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    width: inherit;
+    height: inherit;
+  }
+
+  &__fullname {
+    margin: 0;
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__content {
+    margin: 2rem 0;
+    flex: 1;
+    user-select: text;
+  }
+
+  &__actions {
+    justify-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__created {
+    font-size: 1.2rem;
+    margin-right: auto;
+    cursor: help;
+  }
+
+  &__favorite {
+    padding: 0;
+    width: 2.5rem;
+    cursor: pointer;
+
+    & > svg > path {
+      transition: all .5s;
+      transform-origin: center;
+      
+      &.favorite {
+        fill: #fc3;
+
+        &:hover {
+          transition: stroke 0;
+          stroke: #373737;
+        }
+      }
+    }
+    
+    &:hover > svg > path {
+      stroke: #5E6BF6;
+      transform: scale(1.2);
+    }
+  }
+}
